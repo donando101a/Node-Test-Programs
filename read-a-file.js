@@ -1,4 +1,5 @@
 /* Blocking Code Example */
+/*                       */
 var fs = require("fs");
 
 var data = fs.readFileSync('inputx.txt');
