@@ -1,2 +1,2 @@
-Tutorials Point is giving self learning content
-to teach the world in simple and easy way!!!!!
+This is a sample file for testing reading from node.js.
+Inserting multiple lines.
