@@ -26,4 +26,4 @@ fs.readFile('input.txt', function (err, data) {
     console.log(filestring);
 } );
 
-console.log("Program Ended");
+console.log("The Program Ended");

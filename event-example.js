@@ -48,4 +48,4 @@ myeventEmitter.once('event_OneTime', oneTime)
 // do a connection to something
 myeventEmitter.emit('event_Connection');
 myeventEmitter.emit('event_OneTime');
-console.log("Program Ended.");
+console.log("The Program Ended.");
