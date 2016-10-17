@@ -2,7 +2,7 @@
 /*                       */
 var fs = require("fs");
 
-var data = fs.readFileSync('inputx.txt');
+var data = fs.readFileSync('input.txt');
 
 console.log(data.toString());
 
@@ -26,4 +26,4 @@ fs.readFile('input.txt', function (err, data) {
     console.log(filestring);
 } );
 
-console.log("Program Ended");
+console.log("The Program Ended");

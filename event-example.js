@@ -1,6 +1,7 @@
-
-/* we need the events module 
-/* to create an eventEmitter object */
+/*------------------------------------------------------------------------------*/
+/* we need the events module                                                    */
+/* to create an eventEmitter object                                             */
+/*------------------------------------------------------------------------------*/
 var events = require('events');
 
 var myeventEmitter = new events.EventEmitter();
@@ -30,15 +31,20 @@ var dataHandler = function dataReceived() {
     console.log('>>>data received succesfully.<<<');    
     // do something with the data
 }
+
+var oneTime = function () {
+    console.log('>>>display a message only one time')
+}
 /*------------------------------------------------------------------------------*/
 /* Bindings:                                                                    */  
 /*------------------------------------------------------------------------------*/
-/* use method .on for binding to a Handler and                                  */
-/* use method .on for binding to an anonymous function                          */
-/* method .listener is the same as method .on                                   */
+/* use method .on or .addListener for binding to a Handler and                  */
+/* use method .on for binding to a function                                     */
+/* use method .once for a listener that is invoked only once                    */
 /*------------------------------------------------------------------------------*/
-myeventEmitter.on('event_Connection', connectHandler);
-myeventEmitter.on('event_DataReceived', dataHandler); 
+myeventEmitter.addListener('event_Connection', connectHandler);
+myeventEmitter.on('event_DataReceived', dataHandler);
+myeventEmitter.once('event_OneTime', oneTime)
 /*------------------------------------------------------------------------------*/
 /* Mainline:                                                                    */  
 /*------------------------------------------------------------------------------*/
@@ -47,7 +53,6 @@ myeventEmitter.on('event_DataReceived', dataHandler);
 /*------------------------------------------------------------------------------*/
 // do a connection to something
 myeventEmitter.emit('event_Connection');
-
 // count how many listeners for the event
 var count = myeventEmitter.listenerCount('event_Connection');
 console.log(count); 
